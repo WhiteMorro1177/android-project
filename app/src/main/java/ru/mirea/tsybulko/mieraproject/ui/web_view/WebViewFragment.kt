@@ -14,7 +14,6 @@ import ru.mirea.tsybulko.mieraproject.databinding.FragmentWebViewBinding
 
 class WebViewFragment : Fragment() {
     private lateinit var binder: FragmentWebViewBinding
-    private lateinit var webView: WebView
 
     private val homePageUrl = "https://google.com/"
 
@@ -27,7 +26,7 @@ class WebViewFragment : Fragment() {
         val fragmentView = inflater.inflate(R.layout.fragment_web_view, container, false)
         binder = FragmentWebViewBinding.bind(fragmentView)
 
-        webView = binder.browserWindow
+        val webView = binder.browserWindow
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
         webView.loadUrl(homePageUrl)

@@ -21,6 +21,10 @@
             android:id="@+id/nav_browser"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/menu_browser" />
+        <item
+            android:id="@+id/nav_data"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/nav_data" />
 
     </group>
 </menu>
