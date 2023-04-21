@@ -2,7 +2,6 @@ package ru.mirea.tsybulko.mieraproject
 
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -38,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_slideshow,
                 R.id.nav_browser,
                 R.id.nav_data,
+                R.id.nav_stopwatch,
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
