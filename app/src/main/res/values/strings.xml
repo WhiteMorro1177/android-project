@@ -45,4 +45,5 @@ with Firebase.</string>
     <string name="error_sign_in_failed">Sign in failed, see logs for de-
 tails.</string>
     <string name="menu_map">Restaurants</string>
+    <string name="menu_files">File Works</string>
 </resources>

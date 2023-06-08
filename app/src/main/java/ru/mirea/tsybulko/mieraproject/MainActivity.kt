@@ -41,7 +41,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_compass,
                 R.id.nav_contact,
                 R.id.nav_recorder,
-                R.id.nav_map
+                R.id.nav_map,
+                R.id.nav_files
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

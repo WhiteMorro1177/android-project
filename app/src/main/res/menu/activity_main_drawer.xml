@@ -47,5 +47,9 @@
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/menu_map" />
 
+        <item android:id="@+id/nav_files"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/menu_files" />
+
     </group>
 </menu>
