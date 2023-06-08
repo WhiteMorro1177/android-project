@@ -57,4 +57,10 @@
         android:label="nav_record"
         tools:layout="@layout/fragment_voice_recorder" />
 
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="ru.mirea.tsybulko.mieraproject.ui.restaurant.RestaurantFragment"
+        android:label="nav_map"
+        tools:layout="@layout/fragment_restaurant" />
+
 </navigation>
