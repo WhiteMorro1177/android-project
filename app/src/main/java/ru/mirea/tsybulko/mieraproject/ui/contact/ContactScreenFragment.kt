@@ -136,7 +136,8 @@ class ContactScreenFragment : Fragment() {
             }
         }
 
-        requestPermissions(permissionsToRequest.toTypedArray(), 200)
+        if (permissionsToRequest.isNotEmpty())
+            requestPermissions(permissionsToRequest.toTypedArray(), 200)
     }
 
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
 import ru.mirea.tsybulko.mieraproject.R
@@ -136,6 +137,7 @@ class VoiceRecorderFragment : Fragment() {
             }
         }
 
-        requestPermissions(permissionsToRequest.toTypedArray(), 200)
+        if (permissionsToRequest.isNotEmpty())
+            requestPermissions(permissionsToRequest.toTypedArray(), 200)
     }
 }
