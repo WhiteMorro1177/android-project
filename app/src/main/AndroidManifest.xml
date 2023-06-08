@@ -16,6 +16,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.MieraProject"
+        android:enableOnBackInvokedCallback="true"
         tools:targetApi="31">
         <service
             android:name=".ui.stopwatch.StopwatchService"

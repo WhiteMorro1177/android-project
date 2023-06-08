@@ -6,54 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".ui.stopwatch.StopwatchFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp" >
 
         <TextView
-            android:id="@+id/timer"
-            android:layout_width="wrap_content"
+            android:id="@+id/timeTV"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="00:00"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.525" />
+            android:text="00:00:00"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            android:textAlignment="center"/>
 
-        <Button
-            android:id="@+id/startButton"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="start"
-            app:layout_constraintBottom_toBottomOf="@+id/resetButton"
-            app:layout_constraintEnd_toStartOf="@+id/resetButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/resetButton"
-            app:layout_constraintVertical_bias="0.374" />
+            android:padding="10dp">
 
-        <Button
-            android:id="@+id/stopButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="stop"
-            app:layout_constraintBottom_toBottomOf="@+id/resetButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/resetButton"
-            app:layout_constraintTop_toTopOf="@+id/resetButton"
-            app:layout_constraintVertical_bias="0.374" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/startStopButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="start"
+                app:icon="@drawable/baseline_play_arrow_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/resetButton"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/resetButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="reset"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timer"
-            app:layout_constraintVertical_bias="0.475" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset"
+                app:icon="@drawable/baseline_replay_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/startStopButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
 </FrameLayout>
