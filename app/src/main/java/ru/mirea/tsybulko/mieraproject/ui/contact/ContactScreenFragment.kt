@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import ru.mirea.tsybulko.mieraproject.databinding.FragmentContactScreenBinding
 import android.Manifest.permission
+import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.icu.text.SimpleDateFormat
 import android.net.Uri
 import android.os.Environment
@@ -29,9 +32,18 @@ import kotlin.collections.ArrayList
 
 class ContactScreenFragment : Fragment() {
     private lateinit var binding: FragmentContactScreenBinding
+    private var imageUri: Uri? = null
 
-    private lateinit var imageUri: Uri
+    companion object {
+        const val PREFERENCES_TAG = "shared_prefs"
 
+        const val NAME_TAG = "saved_name"
+        const val ORG_TAG = "saved_org_name"
+        const val NUMBER_TAG = "saved_number"
+        const val IMAGE_URI = ""
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,6 +71,7 @@ class ContactScreenFragment : Fragment() {
                 callback
             )
 
+        // set profile photo
         binding.imageView.setOnClickListener {
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             try {
@@ -69,6 +82,35 @@ class ContactScreenFragment : Fragment() {
                 cameraActivityResultLauncher.launch(cameraIntent)
             } catch (e: IOException) {
                 e.printStackTrace()
+            }
+        }
+
+        val fragment = this.context!!
+
+        val prefs: SharedPreferences =
+            this.context!!.getSharedPreferences(PREFERENCES_TAG, Context.MODE_PRIVATE).apply {
+                binding.editTextName.setText(this.getString(NAME_TAG, ""))
+                binding.editTextOrg.setText(this.getString(ORG_TAG, ""))
+                binding.editTextTelephone.setText(this.getString(NUMBER_TAG, ""))
+
+                binding.imageView.setImageURI(
+                    Uri.parse(
+                        this.getString(
+                            IMAGE_URI,
+                            fragment.getDrawable(R.drawable.baseline_camera_alt_24).toString()
+                        )
+                    )
+                )
+            }
+
+        // save fields data
+        binding.buttonSave.setOnClickListener {
+            prefs.edit().run {
+                putString(NAME_TAG, binding.editTextName.text.toString())
+                putString(ORG_TAG, binding.editTextOrg.text.toString())
+                putString(NUMBER_TAG, binding.editTextTelephone.text.toString())
+                putString(IMAGE_URI, if (imageUri == null) "" else imageUri.toString())
+                apply()
             }
         }
 
