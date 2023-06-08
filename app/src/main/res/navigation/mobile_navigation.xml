@@ -39,5 +39,22 @@
         android:label="nav_stopwatch"
         tools:layout="@layout/fragment_stopwatch" />
 
+    <fragment
+        android:id="@+id/nav_compass"
+        android:name="ru.mirea.tsybulko.mieraproject.ui.compass.CompassFragment"
+        android:label="nav_compass"
+        tools:layout="@layout/fragment_compass" />
+
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="ru.mirea.tsybulko.mieraproject.ui.contact.ContactScreenFragment"
+        android:label="nav_contact"
+        tools:layout="@layout/fragment_contact_screen" />
+
+    <fragment
+        android:id="@+id/nav_recorder"
+        android:name="ru.mirea.tsybulko.mieraproject.ui.voicerecorder.VoiceRecorderFragment"
+        android:label="nav_record"
+        tools:layout="@layout/fragment_voice_recorder" />
 
 </navigation>

@@ -22,4 +22,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_stopwatch">Stopwatch</string>
+    <string name="menu_compass">Compass</string>
+    <string name="menu_contact">Contact Screen</string>
+    <string name="menu_recorder">Voice Recorder</string>
 </resources>

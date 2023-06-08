@@ -30,5 +30,18 @@
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/menu_stopwatch" />
 
+        <item
+            android:id="@+id/nav_compass"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/menu_compass" />
+
+        <item android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/menu_contact" />
+
+        <item android:id="@+id/nav_recorder"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/menu_recorder" />
+
     </group>
 </menu>
